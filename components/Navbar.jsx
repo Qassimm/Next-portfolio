@@ -202,7 +202,7 @@ const Navbar = () => {
         >
            <a className="logo flex items-center text-2xl 2xl:text-4xl font-bold md:hidden">
           <img
-            src="/images/Logo.png"
+            src="/images/logo.png"
             alt="Logo"
             className="h-auto w-[75px] 2xl:w-[120px]"
           />
