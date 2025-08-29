@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-outfit: var(--font-outfit); 
+  --font-lufga: var(--font-lufga);   
+  --font-sans: var(--font-outfit);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+
+body {
+  font-family: var(--font-outfit), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+/* menubar animation */
+
+.icon-holder {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.bar {
+  width: 100%;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+/* Animation on open */
+.icon-holder.menu-open .bar-1 {
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 28px;
+}
+
+.icon-holder.menu-open .bar-2 {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.icon-holder.menu-open .bar-3 {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+  width: 28px;
+}
+
+
+
+
+/* banner slide */
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+
+
+.card{
+clip-path: polygon(0 0, 100% 0, 100% 76%, 81% 76%, 69% 86%, 69% 100%, 0 100%);
+
+}
+
+
+
+
+
+/*slides testimonial  cards*/
+
+/* Wrap container */
+.testimonial-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  
+}
+
+/* Scroll track container */
+.testimonial-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 40s linear infinite;
+  
+}
+
+/* Keyframes for infinite scroll */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(50%);
+  }
 }
