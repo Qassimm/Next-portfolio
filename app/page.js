@@ -10,7 +10,6 @@ import MyServices from "@/components/MyServices";
 import MyWorkExperience from "@/components/MyWorkExperience";
 import Portfolio from "@/components/Portfolio";
 import Testimonial from "@/components/Testimonial";
-
 import { Toaster } from 'react-hot-toast';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
